@@ -207,3 +207,501 @@ ${1}($2){
 }
 endsnippet
 # vim:ft=snippets:
+# My custom snippet
+
+snippet node "create generic node"
+typedef struct ${1:node_name} $1;
+struct $1
+{
+	${2:type} data;
+	$1 *next;
+};
+endsnippet
+
+snippet stack_i "implementation of integer stack"
+typedef struct node_i node_i;
+struct node_i
+{
+	int64_t data;
+	node_i *next;
+};
+
+typedef struct stack_i stack_i;
+struct stack_i
+{
+	node_i *head;
+	size_t sz;
+	void (*push) (stack_i *, int64_t);
+	void (*pop) (stack_i *);
+	_Bool (*empty) (stack_i *);
+	size_t (*size) (stack_i *);
+	int64_t (*top)(stack_i *);
+};
+void __push_integer(stack_i *st, int64_t val)
+{
+	node_i *new_node = (node_i *) malloc(sizeof(node_i ));
+	if(!new_node)
+	{
+		perror("Memory allocation failure\n");
+		exit(1);
+	}
+	new_node->data = val;
+	new_node->next = st->head;
+	st->head = new_node;
+	st->sz++;
+}
+void __pop_integer(stack_i *st)
+{
+	if(st->head == NULL)
+		return;
+	node_i *temp = st->head;
+	st->head = temp->next;
+	free(temp);
+	st->sz--;
+}
+int64_t __top_integer(stack_i *st)
+{
+	if(!st->head)
+	{
+		printf("Stack is empty. Returning error value -1\n");
+		return -1;
+	}
+	return st->head->data;
+}
+_Bool __empty_integer(stack_i *st)
+{
+	return !st->sz;
+};
+size_t __size_integer(stack_i *st)
+{
+	return st->sz;
+}
+stack_i *init_stack_i()
+{
+	stack_i *new_stack = (stack_i*) malloc(sizeof(stack_i));
+	new_stack->head = NULL;
+	new_stack->sz = 0;
+	new_stack->push = __push_integer;
+	new_stack->pop = __pop_integer;
+	new_stack->top = __top_integer;
+	new_stack->empty = __empty_integer;
+	new_stack->size = __size_integer;
+	return new_stack;
+}
+void delete_stack_integer(stack_i *st)
+{
+	node_i *ptr = st->head;
+	while(ptr)
+	{
+		node_i *tmp = ptr->next;
+		free(ptr);
+		ptr = tmp;
+	}
+	free(st);
+}
+endsnippet
+
+snippet stacki "create integer stack pointer"
+stack_i *${1:stack_name} = init_stack_i();
+${VISUAL}$0
+endsnippet
+
+snippet clrsti	"free stack integer"
+delete_stack_integer($1);
+endsnippet
+
+snippet stack_c "implementation of char stack"
+typedef struct node_c node_c;
+struct node_c
+{
+	char data;
+	node_c *next;
+};
+
+typedef struct stack_c stack_c;
+struct stack_c
+{
+	node_c *head;
+	size_t sz;
+	void (*push) (stack_c *, char);
+	void (*pop) (stack_c *);
+	_Bool (*empty) (stack_c *);
+	size_t (*size) (stack_c *);
+	char (*top)(stack_c *);
+};
+void __push_char(stack_c *st, char val)
+{
+	node_c *new_node = (node_c *) malloc(sizeof(node_c ));
+	if(!new_node)
+	{
+		perror("Memory allocation failure\n");
+		exit(1);
+	}
+	new_node->data = val;
+	new_node->next = st->head;
+	st->head = new_node;
+	st->sz++;
+}
+void __pop_char(stack_c *st)
+{
+	if(st->head == NULL)
+		return;
+	node_c *temp = st->head;
+	st->head = temp->next;
+	free(temp);
+	st->sz--;
+}
+char __top_char(stack_c *st)
+{
+	if(!st->head)
+	{
+		printf("Stack is empty. Returning error value -1\n");
+		return -1;
+	}
+	return st->head->data;
+}
+_Bool __empty_char(stack_c *st)
+{
+	return !st->sz;
+};
+size_t __size_char(stack_c *st)
+{
+	return st->sz;
+}
+stack_c *init_stack_c()
+{
+	stack_c *new_stack = (stack_c*) malloc(sizeof(stack_c));
+	new_stack->head = NULL;
+	new_stack->sz = 0;
+	new_stack->push = __push_char;
+	new_stack->pop = __pop_char;
+	new_stack->top = __top_char;
+	new_stack->empty = __empty_char;
+	new_stack->size = __size_char;
+	return new_stack;
+}
+void delete_stack_char(stack_c *st)
+{
+	node_c *ptr = st->head;
+	while(ptr)
+	{
+		node_c *tmp = ptr->next;
+		free(ptr);
+		ptr = tmp;
+	}
+	free(st);
+}
+endsnippet
+
+snippet stackc "create char stack pointer"
+stack_c *${1:stack_name} = init_stack_c();
+${VISUAL}$0
+endsnippet
+
+snippet clrstc	"free stack char"
+delete_stack_char($1);
+endsnippet
+
+snippet stack_f "implementation of double stack"
+typedef struct node_f node_f;
+struct node_f
+{
+	double data;
+	node_f *next;
+};
+
+typedef struct stack_f stack_f;
+struct stack_f
+{
+	node_f *head;
+	size_t sz;
+	void (*push) (stack_f *, double);
+	void (*pop) (stack_f *);
+	_Bool (*empty) (stack_f *);
+	size_t (*size) (stack_f *);
+	double (*top)(stack_f *);
+};
+void __push_double(stack_f *st, double val)
+{
+	node_f *new_node = (node_f *) malloc(sizeof(node_f));
+	if(!new_node)
+	{
+		perror("Memory allocation failure\n");
+		exit(1);
+	}
+	new_node->data = val;
+	new_node->next = st->head;
+	st->head = new_node;
+	st->sz++;
+}
+void __pop_double(stack_f *st)
+{
+	if(st->head == NULL)
+		return;
+	node_f *temp = st->head;
+	st->head = temp->next;
+	free(temp);
+	st->sz--;
+}
+double __top_double(stack_f *st)
+{
+	if(!st->head)
+	{
+		printf("Stack is empty. Returning error value -1\n");
+		return -1;
+	}
+	return st->head->data;
+}
+_Bool __empty_double(stack_f *st)
+{
+	return !st->sz;
+};
+size_t __size_double(stack_f *st)
+{
+	return st->sz;
+}
+stack_f *init_stack_f()
+{
+	stack_f *new_stack = (stack_f*) malloc(sizeof(stack_f));
+	new_stack->head = NULL;
+	new_stack->sz = 0;
+	new_stack->push = __push_double;
+	new_stack->pop = __pop_double;
+	new_stack->top = __top_double;
+	new_stack->empty = __empty_double;
+	new_stack->size = __size_double;
+	return new_stack;
+}
+void delete_stack_double(stack_f *st)
+{
+	node_f *ptr = st->head;
+	while(ptr)
+	{
+		node_f *tmp = ptr->next;
+		free(ptr);
+		ptr = tmp;
+	}
+	free(st);
+}
+endsnippet
+
+snippet stackf "create double stack pointer"
+stack_f *${1:stack_name} = init_stack_f();
+${VISUAL}$0
+endsnippet
+
+snippet clrstf	"free stack double"
+delete_stack_double($1);
+endsnippet
+
+snippet push "push values in a ds"
+${1:var_name}->push($1, $2);
+endsnippet
+snippet pop "pop values from a ds"
+${1:var_name}->pop($1);
+endsnippet
+snippet top "return top value"
+${1:var_name}->top($1)
+endsnippet
+snippet empty
+${1:var}->empty($1)
+endsnippet
+
+
+snippet stack "implementation of generic stack"
+typedef struct ${1:node_name} $1;
+struct $1
+{
+	${2:type} data;
+	$1 *next;
+};
+
+typedef struct ${3:stack_name} $3;
+struct $3
+{
+	$1 *head;
+	size_t sz;
+	void (*push) ($3 *, $2);
+	void (*pop) ($3 *);
+	_Bool (*empty) ($3 *);
+	size_t (*size) ($3 *);
+	$2 (*top)($3 *);
+};
+void __push_$2($3 *st, $2 val)
+{
+	$1 *new_node = ($1 *) malloc(sizeof($1));
+	if(!new_node)
+	{
+		perror("Memory allocation failure\n");
+		exit(1);
+	}
+	new_node->data = val;
+	new_node->next = st->head;
+	st->head = new_node;
+	st->sz++;
+}
+void __pop_$2($3 *st)
+{
+	if(st->head == NULL)
+		return;
+	$1 *temp = st->head;
+	st->head = temp->next;
+	free(temp);
+	st->sz--;
+}
+$2 __top_$2($3 *st)
+{
+	if(!st->head)
+	{
+		printf("Stack is empty. Returning error value -1\n");
+		return -1;
+	}
+	return st->head->data;
+}
+_Bool __empty_$2($3 *st)
+{
+	return !st->sz;
+};
+size_t __size_$2($3 *st)
+{
+	return st->sz;
+}
+$3 *init_$3()
+{
+	$3 *new_stack = ($3*) malloc(sizeof($3));
+	new_stack->head = NULL;
+	new_stack->sz = 0;
+	new_stack->push = __push_$2;
+	new_stack->pop = __pop_$2;
+	new_stack->top = __top_$2;
+	new_stack->empty = __empty_$2;
+	new_stack->size = __size_$2;
+	return new_stack;
+}
+void delete_stack_$2($3 *st)
+{
+	$1 *ptr = st->head;
+	while(ptr)
+	{
+		$1 *tmp = ptr->next;
+		free(ptr);
+		ptr = tmp;
+	}
+	free(st);
+}
+endsnippet
+snippet queue "Generic queue impelementation in C"
+typedef struct ${1:node_name} $1;
+struct $1
+{
+	${2:type} data;
+	$1 *next;
+};
+
+typedef struct ${3:queue} $3;
+struct $3
+{
+	$1 *head;
+	$1 *end;
+	size_t sz;
+	void (*push) ($3 *, $2);
+	void (*pop) ($3 *);
+	_Bool (*empty) ($3 *);
+	size_t (*size) ($3 *);
+	$2 (*front)($3 *);
+	$2 (*back)($3 *);
+};
+void __queue_push_$2($3 *q, $2 val)
+{
+	$1 *new_node = ($1 *) malloc(sizeof($1));
+	if(!new_node)
+	{
+		perror("Memory allocation failure\n");
+		exit(1);
+	}
+	if(!q->sz)
+		q->head =  new_node;
+	else
+		q->end->next = new_node;
+	q->end = new_node;
+	new_node->data = val;
+	new_node->next = NULL;
+	q->sz++;
+}
+void __queue_pop_$2($3 *q)
+{
+	if(q->head == NULL)
+		return;
+	if(q->sz == 1)
+	{
+		free(q->head);
+		q->head = q->end = NULL;
+		q->sz--;
+		return;
+	}
+	$1 *temp = q->head;
+	q->head = temp->next;
+	free(temp);
+	q->sz--;
+}
+$2 __queue_front_$2($3 *q)
+{
+	if(!q->head)
+	{
+		printf("Stack is empty. Returning error value -1\n");
+		return -1;
+	}
+	return q->head->data;
+}
+$2 __queue_back_$2($3 *q)
+{
+	if(!q->end)
+	{
+		printf("Queue is empty. Returning error value -1\n");
+		return -1;
+	}
+	return q->end->data;
+}
+_Bool __queue_empty_$2($3 *q)
+{
+	return !q->sz;
+};
+size_t __queue_size_$2($3 *q)
+{
+	return q->sz;
+}
+$3 *init_queue()
+{
+	$3 *new_queue = ($3*) malloc(sizeof($3));
+	new_queue->head = NULL;
+	new_queue->end = NULL;
+	new_queue->sz = 0;
+	new_queue->push = __queue_push_$2;
+	new_queue->pop = __queue_pop_$2;
+	new_queue->empty = __queue_empty_$2;
+	new_queue->size = __queue_size_$2;
+	new_queue->front = __queue_front_$2;
+	new_queue->back = __queue_back_$2;
+	return new_queue;
+}
+void delete_queue_$2($3 *q)
+{
+	$1 *ptr = q->head;
+	while(ptr)
+	{
+		$1 *tmp = ptr->next;
+		free(ptr);
+		ptr = tmp;
+	}
+	free(q);
+}
+endsnippet
+snippet clrqi
+delete_queue_int64_t($1);
+endsnippet
+snippet clrqf
+delete_queue_double($1);
+endsnippet
+snippet clrqc
+delete_queue_char($1);
+endsnippet
