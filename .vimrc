@@ -24,7 +24,8 @@ call vundle#end()
 autocmd vimenter * ++nested colorscheme gruvbox
 filetype plugin indent on
 filetype plugin on
-set number
+" View absolute line numbers in the text file
+" set number
 set relativenumber
 map <F8> :w <CR> :!gcc % -lm -o %< && ./%< <CR>
 map <F7> :!./%< <CR>
