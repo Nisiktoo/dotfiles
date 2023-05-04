@@ -1,6 +1,8 @@
 set encoding=utf-8
 set nocompatible
 filetype off
+
+" Plugin list used in Vim. Vundle is used here
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'kentarosasaki/vim-emacs-bindings'
@@ -18,6 +20,7 @@ Plugin 'preservim/nerdcommenter'
 Plugin 'neoclide/coc.nvim'
 call vundle#end()
 
+" When entering vim set colorscheme to gruvbox
 autocmd vimenter * ++nested colorscheme gruvbox
 filetype plugin indent on
 filetype plugin on
