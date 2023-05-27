@@ -46,26 +46,18 @@ clock_t startTime;
 double getCurrentTime() {
 	return (double)(clock() - startTime) / CLOCKS_PER_SEC;
 }
+/*
+ * # Welcome to the Internet # *
+	 * # Have a look around # *
+	 * *********************** 
+	 *     @17Sharat         */
+
+
+
 int main(int argc, char **argv) {
-	startTime = clock();
+	/* startTime = clock(); */
 	/* freopen("input.txt", "r", stdin); */
 	/* freopen("output.txt", "w", stdout); */
-
-	int t;
-	/* scanf("%d", &t); */
-	for (int i = 1; i <= t; i++) {
-		/* printf("Case %d: ", i); */
-
-		solve();
-		
-		/* printf("%lld\n", (ll) solve()); */
-
-		/* if (solve()) { */
-		/* 	printf("YES\n"); */
-		/* } else { */
-		/* 		printf("NO\n"); */
-		/* } */
-	}
 
 	return 0;
 }
