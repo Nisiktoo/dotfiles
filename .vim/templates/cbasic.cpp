@@ -17,6 +17,7 @@
 #include <random>
 #include <bitset>
 #include <array>
+#include <cstdint>
 using namespace std;
 
 #ifdef LOCAL 
@@ -38,7 +39,7 @@ using pll = pair<ll, ll>;
 
 #define pb push_back
 #define mp make_pair
-#define all(x) (x).begin(), (x),end()
+#define all(x) (x).begin(), (x).end()
 #define fi first
 #define se second
 
