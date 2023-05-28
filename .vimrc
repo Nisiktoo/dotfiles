@@ -14,7 +14,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'SirVer/ultisnips'
 Plugin 'morhetz/gruvbox'
 Plugin 'vim-utils/vim-man'
-Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'ojroques/vim-oscyank'
 Plugin 'tpope/vim-commentary'
 Plugin 'preservim/nerdcommenter'
 Plugin 'neoclide/coc.nvim'
@@ -222,3 +222,8 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" Copy to system clipboard
+nmap <leader>c <Plug>OSCYankOperator
+nmap <leader>cc <leader>c__
+vmap <leader>c <Plug>OSCYankVisual
