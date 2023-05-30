@@ -47,11 +47,11 @@ clock_t startTime;
 double getCurrentTime() {
 	return (double)(clock() - startTime) / CLOCKS_PER_SEC;
 }
-/*
+/* ########################### *
  * # Welcome to the Internet # *
-	 * # Have a look around # *
-	 * *********************** 
-	 *     @17Sharat         */
+ * #   Have a look around    # *
+ * #       @17sharat         # *
+ * ########################### */
 
 
 
@@ -59,7 +59,7 @@ int main(int argc, char **argv) {
 	/* startTime = clock(); */
 	/* freopen("input.txt", "r", stdin); */
 	/* freopen("output.txt", "w", stdout); */
-
+	 
 	return 0;
 }
 
