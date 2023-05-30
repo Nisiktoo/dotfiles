@@ -214,7 +214,7 @@ client.urgent   $ubgcolor 	$ubgcolor 			$textcolor  $ubgcolor
 
 set $mod Mod4
 
-bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-2/launcher.sh
+bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-1/launcher.sh
 bindsym $mod+p exec --no-startup-id ~/.config/rofi/powermenu/type-5/powermenu.sh
 
 # Keybinding for i3-lock
@@ -224,7 +224,7 @@ bindsym $mod+x exec i3lock
 exec_always picom -f
 
 # Set Background Wallpaper 
-exec_always feh --bg-fill /usr/share/backgrounds/archlinux/archwave.png
-
+# exec_always feh --bg-fill /usr/share/backgrounds/archlinux/*
+exec_always /home/17Sharat/making/styli.sh/styli.sh -d /usr/share/backgrounds/archlinux
 # Polybar Launch Script
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
