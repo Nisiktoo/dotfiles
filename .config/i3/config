@@ -214,7 +214,7 @@ client.urgent   $ubgcolor 	$ubgcolor 			$textcolor  $ubgcolor
 
 set $mod Mod4
 
-bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-1/launcher.sh
+bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-7/launcher.sh
 bindsym $mod+p exec --no-startup-id ~/.config/rofi/powermenu/type-5/powermenu.sh
 
 # Keybinding for i3-lock
