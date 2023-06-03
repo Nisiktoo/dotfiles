@@ -19,7 +19,8 @@ Plugin 'tpope/vim-commentary'
 Plugin 'preservim/nerdcommenter'
 Plugin 'neoclide/coc.nvim'
 Plugin 'christoomey/vim-run-interactive'
-Plugin 'gabrielsimoes/cfparser.vim'
+"Plugin 'gabrielsimoes/cfparser.vim'
+Plugin '17ShaRat/ojparser.vim'
 call vundle#end()
 
 " When entering vim set colorscheme to gruvbox
