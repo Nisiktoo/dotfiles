@@ -59,9 +59,10 @@ typedef vector<pll> vpll;
 #define sz(x) (int)(x).size()
 #define FOR(i, a, b) for (int i=a; i<(b); i++)
 #define F0R(i, a) for (int i=0; i<(a); i++)
-#define FORd(i,a,b) for (int i = (b)-1; i >= a; i--)
+#define FORd(i,a,b) for (int i = (a)-1; i >= b; i--)
 #define F0Rd(i,a) for (int i = (a)-1; i >= 0; i--)
 #define trav(a,x) for (auto& a : x)
+#define nl putchar('\n')
 
 
 
