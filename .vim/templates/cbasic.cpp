@@ -63,6 +63,21 @@ typedef vector<pll> vpll;
 #define F0Rd(i,a) for (int i = (a)-1; i >= 0; i--)
 #define trav(a,x) for (auto& a : x)
 #define nl putchar('\n')
+#define ins insert
+#define sci(x) scanf("%d", &x)
+#define sci2(a,b) scanf("%d %d", &a, &b)
+#define sci3(a,b,c) scanf("%d %d %d", &a, &b, &c)
+#define pri(x) printf("%d ", x)
+#define prin(x) printf("%d\n", x)
+#define scl(x) scanf("%lld", &x)
+#define scl2(a,b) scanf("%lld %lld", &a, &b)
+#define scl3(a,b,c) scanf("%lld %lld %lld", &a, &b, &c)
+#define prl(x) printf("%d ", x)
+#define prln(x) printf("%d\n", x)
+#define scs(s) scanf("%s", s)
+#define RET return
+#define RET0 return 0
+
 
 
 
