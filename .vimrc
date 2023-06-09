@@ -17,14 +17,17 @@ Plugin 'vim-utils/vim-man'
 Plugin 'ojroques/vim-oscyank'
 Plugin 'tpope/vim-commentary'
 Plugin 'preservim/nerdcommenter'
+Plugin 'preservim/nerdtree'
 Plugin 'neoclide/coc.nvim'
 Plugin 'christoomey/vim-run-interactive'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'PhilRunninger/nerdtree-visual-selection'
 "Plugin 'gabrielsimoes/cfparser.vim'
 Plugin '17ShaRat/ojparser.vim'
 call vundle#end()
 
-" When entering vim set colorscheme to gruvbox
-autocmd vimenter * ++nested colorscheme gruvbox
+" When entering vim set colorscheme to onedark
+autocmd vimenter * ++nested colorscheme onedark
 filetype plugin indent on
 filetype plugin on
 " View absolute line numbers in the text file
@@ -34,7 +37,9 @@ map <F8> :w <CR> :!gcc % -lm -o %< && ./%< <CR>
 map <F7> :!./%< <CR>
 map <F5> :CSnext<CR>
 map <F10> :w <CR> :!g++ % -lm -o %< && ./%< <CR>
-vnoremap <C-C> :w !xsel -b<CR><CR>
+
+"vnoremap <C-C> :w !xsel -b<CR><CR>
+
 set tabstop=2
 set shiftwidth=2 smarttab
 set softtabstop=4
@@ -228,3 +233,9 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 nmap <leader>c <Plug>OSCYankOperator
 nmap <leader>cc <leader>c__
 vmap <leader>c <Plug>OSCYankVisual
+
+set laststatus=2
+set numberwidth=2
+
+" Open NERDTree File Explorer
+nmap <leader>n :NERDTree<CR>
