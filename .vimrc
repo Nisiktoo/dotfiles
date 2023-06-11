@@ -50,8 +50,8 @@ set background=dark
 
 autocmd BufNewFile *.c 0r ~/.vim/templates/cbasic.c
 autocmd BufWinEnter *.c call cursor(9,2)
-autocmd BufNewFile *.cpp 0r ~/.vim/templates/cbasic.cpp
-autocmd BufWinEnter *.cpp call cursor(72,3)
+autocmd BufNewFile *.cpp 0r ~/repo/dotfiles/.vim/templates/cbasic.cpp
+autocmd BufWinEnter *.cpp call cursor(87,3)
 
 augroup Vimrc
 	autocmd!

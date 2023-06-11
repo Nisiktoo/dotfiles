@@ -1,7 +1,6 @@
 /* ########################### *
  * # Welcome to the Internet # *
  * #   Have a look around    # *
- * #       @17sharat         # *
  * ########################### */
 #include <algorithm>
 #include <array>
@@ -72,8 +71,8 @@ typedef vector<pll> vpll;
 #define scl(x) scanf("%lld", &x)
 #define scl2(a,b) scanf("%lld %lld", &a, &b)
 #define scl3(a,b,c) scanf("%lld %lld %lld", &a, &b, &c)
-#define prl(x) printf("%d ", x)
-#define prln(x) printf("%d\n", x)
+#define prl(x) printf("%lld ", x)
+#define prln(x) printf("%lld\n", x)
 #define scs(s) scanf("%s", s)
 #define RET return
 #define RET0 return 0
