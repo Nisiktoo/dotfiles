@@ -1,7 +1,9 @@
-/* ########################### *
- * # Welcome to the Internet # *
- * #   Have a look around    # *
- * ########################### */
+/* 
+ * You didn’t come into this world. 
+ * You came out of it, like a wave from the ocean. Y
+ * You are not a stranger here.” 
+				– Alan Watts
+									 */
 #include <algorithm>
 #include <array>
 #include <bitset>
@@ -25,13 +27,6 @@
 #include <string>
 #include <random>
 using namespace std;
-
-#ifdef LOCAL 
-				#define eprintf(...) {fprintf(stderr, __VA_ARGS__); fflush(stderr); }
-#else 
-				#define eprintf(...) 42 
-#endif
-
 using ll = long long;
 using ld = long double;
 using uint = unsigned int;
@@ -66,6 +61,7 @@ typedef vector<pll> vpll;
 #define sci(x) scanf("%d", &x)
 #define sci2(a,b) scanf("%d %d", &a, &b)
 #define sci3(a,b,c) scanf("%d %d %d", &a, &b, &c)
+#define sci4(a,b,c,d) scanf("%d %d %d %d", &a, &b, &c, &d)
 #define pri(x) printf("%d ", x)
 #define prin(x) printf("%d\n", x)
 #define scl(x) scanf("%lld", &x)
@@ -75,16 +71,13 @@ typedef vector<pll> vpll;
 #define prln(x) printf("%lld\n", x)
 #define scs(s) scanf("%s", s)
 #define RET return
-#define RET0 return 0
 
 
 
 
-int main(int argc, char **argv) {
-	/* startTime = clock(); */
+int main(void) {
 	/* freopen("input.txt", "r", stdin); */
 	/* freopen("output.txt", "w", stdout); */
 	 
-	return 0;
+	RET 0;
 }
-
