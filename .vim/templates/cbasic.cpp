@@ -1,6 +1,6 @@
 /* 
  * You didn’t come into this world. 
- * You came out of it, like a wave from the ocean. Y
+ * You came out of it, like a wave from the ocean.
  * You are not a stranger here.” 
 				– Alan Watts
 									 */
@@ -57,6 +57,7 @@ typedef vector<pll> vpll;
 #define F0Rd(i,a) for (int i = (a)-1; i >= 0; i--)
 #define trav(a,x) for (auto& a : x)
 #define nl putchar('\n')
+#define putc(c) putchar(c)
 #define ins insert
 #define sci(x) scanf("%d", &x)
 #define sci2(a,b) scanf("%d %d", &a, &b)
@@ -70,6 +71,7 @@ typedef vector<pll> vpll;
 #define prl(x) printf("%lld ", x)
 #define prln(x) printf("%lld\n", x)
 #define scs(s) scanf("%s", s)
+#define scs2(s1, s2) scanf("%s %s", s1, s2)
 #define RET return
 
 
