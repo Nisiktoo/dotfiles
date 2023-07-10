@@ -244,3 +244,13 @@ snippet multi "Multiple test case in CP"
 		/* } */
 	}
 endsnippet
+snippet gcd "get GCD of two numbers"
+ll gcd(ll a, ll b) {
+	while(b) {
+		ll tmp = b;
+		b = a % b;
+		a = tmp;
+	}
+	RET a;
+}
+endsnippet
