@@ -3,7 +3,7 @@
  * You came out of it, like a wave from the ocean.
  * You are not a stranger here. 
 				– Alan Watts
-									 */
+ */
 #include <algorithm>
 #include <array>
 #include <bitset>
@@ -26,6 +26,7 @@
 #include <queue>
 #include <string>
 #include <random>
+#pragma GCC target("popcnt")
 using namespace std;
 using ll = long long;
 using ld = long double;
@@ -43,9 +44,11 @@ typedef vector<ld> vd;
 typedef vector<ll> vl;
 typedef vector<pii> vpii;
 typedef vector<pll> vpll;
+typedef vector<bool> vb;
 #define pb push_back
 #define mp make_pair
 #define all(x) (x).begin(), (x).end()
+#define rall(x) (x).rbegin(), (x).rend()
 #define fi first
 #define se second
 #define lb lower_bound
