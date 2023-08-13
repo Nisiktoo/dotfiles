@@ -276,7 +276,7 @@ void gen_primes(int n) {
 		int start = k * S;
 		for (int p : primes) {
 			int start_idx = (start + p - 1) / p;
-			int j = max(start_idx, p) * p - start;
+			ll j = (ll)max(start_idx, p) * (ll)p - start;
 			while(j < S) {
 				block[j] = false;
 				j += p;
@@ -292,4 +292,29 @@ void gen_primes(int n) {
 	}
 }
 /* ============================================= */
+endsnippet
+snippet merge_cnt "Count number of inversions in the array"
+long long merge_cnt(vector<int> &v) {
+	if(v.size() <= 1) RET 0;
+	vector<int> tmp_a, tmp_b;
+	for(int i = 0; i < v.size()/2;i++) tmp_a.push_back(v[i]);
+	for(int i = v.size()/2; i < v.size(); i++) tmp_b.push_back(v[i]);
+	ll ans = 0;
+	ans += merge_cnt(tmp_a);
+	ans += merge_cnt(tmp_b);
+	int k = 0;
+	int i = 0, j = 0, n = tmp_a.size(), m = tmp_b.size();
+	while(i < n || j < m) {
+		if(j == m || (i < n && tmp_a[i] <= tmp_b[j])) {
+			v[k] = tmp_a[i];
+			i++;
+		} else {
+			v[k] = tmp_b[j];
+			ans += (n - i);
+			j++;
+		}
+		k++;
+	}
+	RET ans;
+}
 endsnippet

@@ -26,8 +26,11 @@
 #include <queue>
 #include <string>
 #include <random>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
 #pragma GCC target("popcnt")
 using namespace std;
+using namespace __gnu_pbds;
 using ll = long long;
 using ld = long double;
 using uint = unsigned int;
@@ -38,7 +41,7 @@ using pii = pair<int, int>;
 using pli = pair<ll, int>;
 using pil = pair<int, ll>;
 using pll = pair<ll, ll>;
-
+template <typename T> using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 typedef vector<int> vi;
 typedef vector<ld> vd;
 typedef vector<ll> vl;
@@ -53,6 +56,7 @@ typedef vector<bool> vb;
 #define se second
 #define lb lower_bound
 #define ub upper_bound
+#define uid(a,b) uniform_int_distribution<int>(a,b)(rng)
 #define sz(x) (int)(x).size()
 #define FOR(i, a, b) for (int i=a; i<(b); i++)
 #define F0R(i, a) for (int i=0; i<(a); i++)
@@ -76,13 +80,11 @@ typedef vector<bool> vb;
 #define scs(s) scanf("%s", s)
 #define scs2(s1, s2) scanf("%s %s", s1, s2)
 #define RET return
-
-
+const int MOD = 1000000007;
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 
 
 int main(void) {
-	/* freopen("input.txt", "r", stdin); */
-	/* freopen("output.txt", "w", stdout); */
 	 
 	RET 0;
 }
