@@ -27,11 +27,11 @@
 #include <queue>
 #include <string>
 #include <random>
-#include <ext/pb_ds/assoc_container.hpp>
-#include <ext/pb_ds/tree_policy.hpp>
+/* #include <ext/pb_ds/assoc_container.hpp> */
+/* #include <ext/pb_ds/tree_policy.hpp> */
 #pragma GCC target("popcnt")
 using namespace std;
-using namespace __gnu_pbds;
+/* using namespace __gnu_pbds; */
 using ll = long long;
 using ld = long double;
 using uint = unsigned int;
@@ -42,7 +42,7 @@ using pii = pair<int, int>;
 using pli = pair<ll, int>;
 using pil = pair<int, ll>;
 using pll = pair<ll, ll>;
-template <typename T> using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+/* template <typename T> using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>; */
 typedef vector<int> vi;
 typedef vector<ld> vd;
 typedef vector<ll> vl;
