@@ -14,6 +14,7 @@ void precompute_sparse_table() {
 
 	for (int i = 1; i <= K; i++) {
 		for (int j = 0; j + (1 << i) <= MAXN; j++) {
+                        /* define your function f() */
 			st[i][j] = f(st[i - 1][j], st[i - 1][j + (1 << (i - 1))]);
 		}
 	}

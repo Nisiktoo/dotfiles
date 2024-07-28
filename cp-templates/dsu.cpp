@@ -2,6 +2,8 @@ struct dsu {
   private:
   std::vector<int> _parent, Size;
   public:
+    dsu() {
+    }
     dsu(int _sz) {
       _parent.resize(_sz+1);
       Size.resize(_sz+1);
