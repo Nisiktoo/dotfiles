@@ -15,7 +15,7 @@ void dfs1(int v) {
   }
   order.push_back(v);
 }
-
+std::reverse(order.begin(), order.end());
 /* Function dfs2 stores all reached vertices in list component, that is going to store next strongly connected component after each run */
 void dfs2(int v) {
   used[v] = true;
