@@ -39,7 +39,7 @@ void push(ll _Tree[], int v) {
 void update(ll _Tree[], int v, int tl, int tr, int l, int r, int addened) {
         if (l > r) return;
         if (l == tl && tr == r) {
-                _Tree += addened;
+                _Tree[v] += addened;
                 Lazy[v] += addened;
         } else {
                 push(_Tree, v);
@@ -51,7 +51,7 @@ void update(ll _Tree[], int v, int tl, int tr, int l, int r, int addened) {
 }
 
 ll seg_query(ll _Tree[], int v, int tl, int tr, int l, int r) {
-        if (l > v) {
+        if (l > r) {
                 return -1e18; // return a dummy value which doesn't effect the result
         } 
         if (l == tl && tr == r) {
