@@ -6,7 +6,7 @@ int log2_floor(unsigned long long i) {
 
 /* usage :
  * i = log2_floor(r-l+1)
- * ans = f(st[i][l], st[i][r-(1<<i) + 1)
+ * ans = f(st[i][l], st[i][r-(1<<i) + 1]
 */
 
 void precompute_sparse_table() {
