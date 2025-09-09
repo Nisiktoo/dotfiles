@@ -32,6 +32,8 @@ typedef std::vector<ll> vl;
 typedef std::vector<pii> vpii;
 typedef std::vector<pll> vpll;
 typedef std::vector<bool> vb;
+
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 #define uid(a, b) uniform_int_distribution<int> (a, b)(rng)
 #define fi first
 #define se second
@@ -58,11 +60,11 @@ T sqr(T x) {
         return x * x;
 }
 template <class T>
-bool chmin(T& a, const T& b) {
+inline bool chmin(T& a, const T& b) {
         return b < a ? a = b, 1 : 0;
 }
 template <class T>
-bool chmax(T& a, const T& b) {
+inline bool chmax(T& a, const T& b) {
         return a < b ? a = b, 1 : 0;
 }
 
