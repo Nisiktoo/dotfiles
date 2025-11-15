@@ -47,6 +47,7 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 #define F0R(i, a) for (int i = 0; i < (a); i++)
 #define FORd(i, a, b) for (int i = (a) - 1; i >= b; i--)
 #define F0Rd(i, a) for (int i = (a) - 1; i >= 0; i--)
+#define repeat(_x) F0R(_, _x)
 #define trav(a, x) for (auto& a : x)
 #define nl cout << "\n"
 #define ins insert
