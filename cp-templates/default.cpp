@@ -56,14 +56,22 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 #define no cout << "No\n"
 #define cinv(x) trav(_el, x) cin >> _el
 #define coutv(x) trav(_el, x) cout << _el << ' '
+
+template <typename C>
+C reversed(const C& c) {
+    return C(c.rbegin(), c.rend());
+}
+
 template<typename T>
 T sqr(T x) {
         return x * x;
 }
+
 template <class T>
 inline bool chmin(T& a, const T& b) {
         return b < a ? a = b, 1 : 0;
 }
+
 template <class T>
 inline bool chmax(T& a, const T& b) {
         return a < b ? a = b, 1 : 0;
