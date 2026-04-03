@@ -51,7 +51,6 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 #define trav(a, x) for (auto& a : x)
 #define nl cout << "\n"
 #define ins insert
-#define ret return
 #define yes cout << "Yes\n"
 #define no cout << "No\n"
 #define cinv(x) trav(_el, x) cin >> _el
