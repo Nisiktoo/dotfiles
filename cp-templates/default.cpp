@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <cassert>
 
 #ifdef DEBUG
 #include <debug.h>
@@ -23,6 +24,10 @@ inline string nxts() {
         return s;
 }
 using ll = long long;
+using u8 = uint8_t;
+using u16 = uint16_t;
+using u32 = uint32_t;
+using u64 = uint64_t;
 using uint = unsigned int;
 using ull = unsigned long long;
 using pii = std::pair<int, int>;
@@ -75,6 +80,38 @@ template <class T>
 inline bool chmax(T& a, const T& b) {
         return a < b ? a = b, 1 : 0;
 }
+
+int popcnt(int x) { return __builtin_popcount(x); }
+int popcnt(u32 x) { return __builtin_popcount(x); }
+int popcnt(ll x) { return __builtin_popcountll(x); }
+int popcnt(u64 x) { return __builtin_popcountll(x); }
+int popcnt_sgn(int x) { return (__builtin_parity(unsigned(x)) & 1 ? -1 : 1); }
+int popcnt_sgn(u32 x) { return (__builtin_parity(x) & 1 ? -1 : 1); }
+int popcnt_sgn(ll x) { return (__builtin_parityll(x) & 1 ? -1 : 1); }
+int popcnt_sgn(u64 x) { return (__builtin_parityll(x) & 1 ? -1 : 1); }
+// (0, 1, 2, 3, 4) -> (-1, 0, 1, 1, 2)
+int topbit(int x) { return (x == 0 ? -1 : 31 - __builtin_clz(x)); }
+int topbit(u32 x) { return (x == 0 ? -1 : 31 - __builtin_clz(x)); }
+int topbit(ll x) { return (x == 0 ? -1 : 63 - __builtin_clzll(x)); }
+int topbit(u64 x) { return (x == 0 ? -1 : 63 - __builtin_clzll(x)); }
+// (0, 1, 2, 3, 4) -> (-1, 0, 1, 0, 2)
+int lowbit(int x) { return (x == 0 ? -1 : __builtin_ctz(x)); }
+int lowbit(u32 x) { return (x == 0 ? -1 : __builtin_ctz(x)); }
+int lowbit(ll x) { return (x == 0 ? -1 : __builtin_ctzll(x)); }
+int lowbit(u64 x) { return (x == 0 ? -1 : __builtin_ctzll(x)); }
+ 
+template <typename T>
+T kth_bit(int k) {
+  return T(1) << k;
+}
+template <typename T>
+bool has_kth_bit(T x, int k) {
+  return x >> k & 1;
+}
+
+
+
+
 
 
 
