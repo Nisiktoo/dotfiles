@@ -5,6 +5,7 @@
 #include <debug.h>
 #else
 #define dbg(x...)
+#define adbg(x, n)
 #endif
 
 using namespace std;

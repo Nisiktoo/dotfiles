@@ -12,7 +12,15 @@ void __print(char x) {cerr << '\'' << x << '\'';}
 void __print(const char *x) {cerr << '\"' << x << '\"';}
 void __print(const string &x) {cerr << '\"' << x << '\"';}
 void __print(bool x) {cerr << (x ? "true" : "false");}
- 
+
+template<typename T, typename V>
+void __print(const T *x, const V sz) {
+        cerr << '{';
+        for (int i = 0; i < sz; i++) {
+                cerr << (i > 0 ? ", " : ""), __print(x[i]);
+        }
+        cerr << '}';
+}
 template<typename T, typename V>
 void __print(const pair<T, V> &x);
 template<typename T>
@@ -24,6 +32,8 @@ template <typename T, typename... V>
 void _print(T t, V... v) {__print(t); if (sizeof...(v)) cerr << ", "; _print(v...);}
 #ifdef DEBUG
 #define dbg(x...) cerr << "\e[91m"<<__func__<<":"<<__LINE__<<" [" << #x << "] = ["; _print(x); cerr << "\e[39m" << endl;
+#define adbg(x, n) cerr << "\e[91m"<< __func__<<":"<<__LINE__<<" [" << #x << "] = ["; __print(x, n); cerr << "]" << "\e[39m" << endl;
 #else
 #define dbg(x...)
+#define adb(x, n)
 #endif
