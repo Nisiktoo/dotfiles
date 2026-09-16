@@ -110,7 +110,25 @@ bool has_kth_bit(T x, int k) {
   return x >> k & 1;
 }
 
+ll ceil_div(ll x, ll y) {
+        assert(y != 0);
+        if (y < 0) {
+                y = -y;
+                x = -x;
+        }
+        if (x <= 0) return x / y;
+        return (x - 1) / y + 1;
+}
 
+ll floor_div(ll x, ll y) {
+	assert(y != 0);
+	if (y < 0) {
+		y = -y;
+		x = -x;
+	}
+	if (x >= 0) return x / y;
+	return (x + 1) / y - 1;
+}
 
 
 
