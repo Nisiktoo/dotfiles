@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+if [ $# -ne 4 ]; then
+        echo "Usage: $0 your_solution_name brute_force_name generator_name number_of_test_cases"
+        echo "do not add .cpp after name"
+        exit 0
+fi
+        
+
+if [ "$1" == "--help" ]; then
+        echo "Usage: $0 your_solution_name brute_force_name generator_name number_of_test_cases"
+        echo "do not add .cpp after name"
+        exit 0
+fi
+# your solution
+g++ -lm -s -x c++ -Wall -Wextra -O2 -std=c++17 -o $1 $1.cpp
+
+# brute-force solution
+g++ -lm -s -x c++ -Wall -Wextra -O2 -std=c++17 -o $2 $2.cpp
+
+# generator
+g++ -lm -s -x c++ -Wall -Wextra -O2 -std=c++17 -o $3 $3.cpp
+
+# Run the stress test
+stress.sh $1 $2 $3 $4
