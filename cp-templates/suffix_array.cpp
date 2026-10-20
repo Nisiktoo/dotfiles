@@ -30,7 +30,7 @@ vector<int> sort_cyclic_shifts(string const& s) {
                         pair<int, int> cur = {c[p[i]], c[(p[i] + (1 << k)) % n]};
                         pair<int, int> prev = {c[p[i-1]], c[(p[i-1] + (1 << k)) % n]};
                         if (cur != prev) ++classes;
-                        cnt[p[i]] = classes - 1;
+                        cn[p[i]] = classes - 1;
                 }
                 c.swap(cn);
         }
