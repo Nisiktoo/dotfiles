@@ -45,6 +45,7 @@ struct suffixArray {
                 for (k && k--, j = ans[rank[i] - 1]; i + k < n && j + k < n && s[i + k] == s[j + k]; k++);
             }
         }
+        ans.erase(ans.begin());
     }
 };
 
