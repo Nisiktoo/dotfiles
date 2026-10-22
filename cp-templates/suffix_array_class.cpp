@@ -5,6 +5,9 @@ struct SuffixArray {
                 p = get_suffix_array(s);
                 lcp = get_lcp_array(p, s);
         }
+        SuffixArray() {
+
+        }
 
 
         vector<int> sorted_cyclic_shift(const string &s) {
